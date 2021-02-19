@@ -1,18 +1,36 @@
-<header class="main-header" style="background-image: url({{ site.github_url }}assets/images/testimg-home-1.jpg)">
-  <!--<nav class="main-nav overlay clearfix">
-    <a class="blog-logo" href="/"><img src="/assets/images/Ghost-Transparent-for-DARK-BG.png" alt="Finding The Way Home" /></a>
-    <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-  </nav>-->
-  <div class="vertical">
-    <div class="main-header-content inner">
-      {% if page.title != "" %}
-      <h1 class="page-title">{{ page.title }}</h1>
-      <h2 class="page-description">{{ page.description }}</h2>
-      {% else %}
-      <h1 class="page-title">{{ site.title }}</h1>
-      <h2 class="page-description">{{ site.description }}</h2>
+<header class="header">
+
+  <div class="header_content">
+    <label class="theme_changer">
+      <input theme_toggle type="checkbox">
+      <div class="button"></div>
+    </label>
+    <a class="header_circle" href="{{ '/' | relative_url }}">
+      <img src="{{ site.user.pic | relative_url }}" alt="{{ site.user.picAlt }}">
+    </a>
+    <span class="header_name">{{ site.user.name }}</span>
+    <span class="header_job">{{ site.user.job }}</span>
+    <span class="header_mes">{{ site.user.message }}</span>
+
+    <nav class="nav">
+      {% if site.user.aboutme %}
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="{{ site.baseurl }}/aboutme.html">about</a>
+        </li>
+      </ul>
       {% endif %}
-    </div>
+      {% for category in site.categories %}
+      {% capture cat_name %}{{ category | first }}{% endcapture %}
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="{{ site.baseurl }}/categories/{{ cat_name }}" id="aa">{{ cat_name }}
+            ({{ category | last | size }})</a>
+        </li>
+      </ul>
+      {% endfor %}
+    </nav>
   </div>
-  <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+
 </header>
+
