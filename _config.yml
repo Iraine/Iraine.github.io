@@ -1,40 +1,59 @@
-# Site settings
-title:          Rain
-description:    "Rain is a simple and clean Jekyll theme with focus on content."
-url:            https://github.com/inelaah/rain
-
-# Author
-author:
-  name:         Inela Avdic Hukic
-  email:        inelaah@gmail.com
-  url:          https://inelaah.com
+# All possible configuration.
+# For more see: http://jekyllrb.com/docs/configuration/
+destination: ./_site
+lsi:         false
+port:        4000
+highligher:  true
 
 # Build settings
-markdown:       kramdown
+markdown:    rdiscount
+rdiscount:
+  extensions: [smart]
 
-# Assets
-sass:
-  sass_dir:     _sass
-  style:        compressed
+# This is the default base url path.
+BASE_PATH : http://meliodus.github.io/
 
-# Gems
-plugins:
-  - jekyll-feed
-  - jekyll-paginate
-  # - jemoji #Uncomment this to allow emoji in your post
+# Website title.
+title : talk2ankan<small>Introvert Geek Diaries</small>
 
-# Permalinks
-permalink:      /:year-:month-:day/:title
-paginate:       5
+# label listing. [create labels for category in folder `_label`]
+# social listing. [create labels for social in folder `_label`]
+collections:
+  - category
+  - social
 
-# Related posts settings
-related_posts_section:
-  max_count:        5
-  min_common_tags:  2
+# This is the default format.
+# For more see: http://jekyllrb.com/docs/permalinks/
+permalink: /:title
 
-# Links to social media
-social:
-  email: inelaah@gmail.com
-  github: https://github.com/inelaah
-  twitter: https://twitter.com
-  linkedin: https://ba.linkedin.com/in/inela-avdic-hukic-322354131
+# Pagination based on number of posts
+# For more see: http://jekyllrb.com/docs/pagination/
+#paginate: 20
+#paginate_path: "page/:num"
+
+  ## Author Details ##
+###########################
+author:
+# Info
+  name: Ankan Biswas
+  role: Computer Programmer
+  email: meliodus@tutanota.com
+  image: images/ankan.png
+# Social
+  github: meliodus
+  twitter: talk2ankan
+  facebook: talk2ankan
+  soundcloud: meliodus
+  reddit: talk2ankan
+#  About
+  about: "Salutation, this is my-space my-world. I dream , i hallucinate, i am curious and ambitious."
+# copyright
+  copyright: "Some rights reserved &#169; 2015 Ankan Biswas."
+
+# Disable custom plugins,and ignore symbolic links..
+# For more see: http://jekyllrb.com/docs/configuration/
+safe:    false
+# Jekyll-sitemap auto generate
+# For more see: https://github.com/jekyll/jekyll-sitemap
+gems:
+  - jekyll-sitemap
